@@ -1,0 +1,30 @@
+#SPDX-FileCopyrightText: 2023 Birger Schacht
+#SPDX-License-Identifier: MIT
+name: Run black linter via poetry
+
+on:
+  workflow_call:
+    inputs:
+      src:
+        required: true
+        type: string
+      options:
+        required: false
+        type: string
+
+jobs:
+  black:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          cache: 'poetry'
+      - name: Install poetry
+        run: pip install poetry
+      - name: Install black
+        run: |
+          python -m poetry install --no-root --no-directory --only dev
+      - name: Run black
+        run: |
+          python -m poetry run black ${{inputs.options}} ${{inputs.src}}
