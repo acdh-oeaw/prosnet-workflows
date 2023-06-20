@@ -1,0 +1,20 @@
+inputs:
+  python-version:
+    description: "Python version used for setup-python action"
+    default: "3.11"
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+    # for poetry caching, we have to install poetry before setting up python
+    - name: Install poetry
+      run: pipx install poetry
+      shell: bash
+    - uses: actions/setup-python@v4
+      with:
+        cache: 'poetry'
+        python-version: ${{ inputs.python-version }}
+    - name: Install dev dependencies
+      run: |
+        poetry install --no-root --no-directory --only dev
+      shell: bash
