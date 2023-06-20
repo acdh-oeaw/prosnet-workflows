@@ -1,0 +1,38 @@
+#SPDX-FileCopyrightText: 2023 Birger Schacht
+#SPDX-License-Identifier: MIT
+name: Run ruff linter via poetry
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        required: false
+        type: string
+        default: "3.11"
+      src:
+        required: true
+        type: string
+      options:
+        required: false
+        type: string
+        default: "check"
+
+jobs:
+  ruff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # for poetry caching, we have to install poetry before setting up python
+      - name: Install poetry
+        run: pipx install poetry
+      - uses: actions/setup-python@v4
+        with:
+          cache: 'poetry'
+          cache-dependency-path: "pyproject.toml"
+          python-version: ${{ inputs.python-version }}
+      - name: Install dev dependencies
+        run: |
+          poetry install --no-root --no-directory --only dev
+      - name: Run ruff
+        run: |
+          poetry run ruff ${{inputs.options}} ${{inputs.src}}
