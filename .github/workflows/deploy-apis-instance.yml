@@ -1,0 +1,75 @@
+#SPDX-FileCopyrightText: 2023 Birger Schacht
+#SPDX-License-Identifier: MIT
+name: Deploy to ACDH-CH infra
+
+on:
+  workflow_call:
+    secrets:
+      C2_KUBE_CONFIG:
+        description: 'The kubctl config file with credentials to access the your kubernetes'
+        required: true
+
+jobs:
+  setup_workflow_env:
+    runs-on: ubuntu-latest
+    outputs:
+      image_tagged: ${{ vars.APP_NAME }}
+      registry_root: ghcr.io/${{ github.repository }}/
+    steps:
+      - run: "/bin/true"
+  build_and_push_to_registry:
+    runs-on: ubuntu-latest
+    needs: [setup_workflow_env]
+    steps:
+      - name: Checkout workflow repo
+        uses: actions/checkout@v3
+        with:
+          repository: acdh-oeaw/prosnet-workflows
+          ref: birger/deploy-workflow
+          path: prosnet-workflows
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          path: apis-instance
+
+      - name: Login to ghcr.io
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: |
+            ${{ needs.setup_workflow_env.outputs.registry_root }}${{ needs.setup_workflow_env.outputs.image_tagged }}/${{ github.ref_name }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=raw,value=latest
+            type=raw,value={{sha}}
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./prosnet-workflows/deploy-apis-instance/Dockerfile
+          tags: ${{ steps.meta.outputs.tags }}
+          push: true
+
+
+  deploy:
+    needs: [setup_workflow_env, build_and_push_to_registry]
+    uses: acdh-oeaw/gl-autodevops-minimal-port/.github/workflows/deploy-cluster-2.yml@main
+    secrets: inherit
+    with:
+      DOCKER_TAG: ${{ needs.setup_workflow_env.outputs.registry_root }}${{ needs.setup_workflow_env.outputs.image_tagged }}/${{ github.ref_name }}
+      APP_NAME: ${{ vars.APP_NAME }}
+      SERVICE_ID: ${{ vars.SERVICE_ID }}
+      PUBLIC_URL: ${{ vars.PUBLIC_URL }}
+      APP_ROOT: "/"
+      KUBE_NAMESPACE: ${{ vars.KUBE_NAMESPACE }}
