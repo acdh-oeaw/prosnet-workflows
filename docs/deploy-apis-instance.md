@@ -53,8 +53,10 @@ application = get_wsgi_application()
 
 For the workflow to work, you have to set some environment variables and secrets in the repository (*Settings* -> *Secrets and variables* -> *Actions*):
 
-Variables:
+Variables needed for deployment to work:
 * `APP_NAME`
 * `KUBE_NAMESPACE`
 * `PUBLIC_URL`
 * `SERVICE_ID`
+
+You probably also want to set at least `DJANGO_SETTINGS_MODULE`
