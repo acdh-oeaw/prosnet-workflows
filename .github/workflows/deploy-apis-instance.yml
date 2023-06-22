@@ -8,6 +8,10 @@ on:
       C2_KUBE_CONFIG:
         description: 'The kubctl config file with credentials to access the your kubernetes'
         required: true
+    inputs:
+      workflows-branch:
+        type: string
+        default: dev
 
 jobs:
   setup_workflow_env:
@@ -25,7 +29,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: acdh-oeaw/prosnet-workflows
-          ref: dev
+          ref: ${{ env.workflows-branch }}
           path: prosnet-workflows
       - name: Checkout
         uses: actions/checkout@v3

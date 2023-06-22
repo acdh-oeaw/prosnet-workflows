@@ -20,7 +20,7 @@ ENV TESTING 0
 
 COPY ./prosnet-workflows/deploy-apis-instance/start.sh /app/
 COPY ./apis-instance /app/
-RUN chown -R app /app && find .
+RUN chown -R app /app /usr/local
 ENV PYTHONPATH=/app
 
 RUN pip install .
