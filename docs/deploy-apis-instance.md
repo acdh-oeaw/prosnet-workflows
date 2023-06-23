@@ -40,8 +40,10 @@ build-backend = "poetry.core.masonry.api"
 ```
 
 The `pyprojec.toml` above lists a package `apis_ontology` that should be
-installed. In this case this should also be part of the repository - but it
-could also be located somewhere else.
+installed. In this example it points to a folder, therefore this folder should
+also be part of the repository - but it could also be located somewhere else.
+Its a Python module like any other, with the limitation that is has to called
+`apis_ontology` (thats a bug in `apis_core` that waits to be fixed...)
 
 The `wsgi.py` is used by gunicorn to start the APIS instance. A simple one could look like this (which is basically the default from Djangos `startproject`):
 
