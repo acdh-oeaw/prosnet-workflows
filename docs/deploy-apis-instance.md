@@ -12,6 +12,7 @@ jobs:
     uses: acdh-oeaw/prosnet-workflows/.github/workflows/deploy-apis-instance.yml@dev
     secrets: inherit
 ```
+It uses the [APIS Base Container](https://github.com/acdh-oeaw/apis-base-container/) for deployment.
 
 The repository running this workflow has to contain two things:
 * a `pyproject.toml` file 
