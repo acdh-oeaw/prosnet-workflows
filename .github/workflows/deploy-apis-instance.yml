@@ -24,13 +24,12 @@ jobs:
       - name: Checkout workflow repo
         uses: actions/checkout@v3
         with:
-          repository: acdh-oeaw/prosnet-workflows
-          ref: dev
-          path: prosnet-workflows
+          repository: acdh-oeaw/apis-base-container
+          path: apis-base-container
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          path: apis-instance
+          path: apis-base-container/apis_instance
 
       - name: Login to ghcr.io
         uses: docker/login-action@v2
@@ -56,8 +55,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
-          file: ./prosnet-workflows/deploy-apis-instance/Dockerfile
+          context: ./apis-base-container
+          file: ./apis-base-container/Dockerfile
           tags: ${{ steps.meta.outputs.tags }}
           push: true
 
