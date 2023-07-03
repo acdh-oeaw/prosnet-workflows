@@ -1,0 +1,36 @@
+#SPDX-FileCopyrightText: 2023 Birger Schacht
+#SPDX-License-Identifier: MIT
+# Works only on PRs at the moment
+name: Run gitlint on pull requests
+
+on:
+  workflow_call:
+    inputs:
+      ignore:
+        required: false
+        type: string
+        # B6: body-is-missing
+        default: "B6"
+      contrib:
+        required: false
+        type: string
+        default: "contrib-title-conventional-commits"
+
+jobs:
+  gitlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if not PR
+        if: github.event_name != 'pull_request'
+        run: |
+          echo "::error This workflow works only with pull requests"
+          exit 1
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install gitlint
+        run: sudo apt-get -y install gitlint
+      - name: Run gitlint
+        if: github.event_name == 'pull_request'
+        run: |
+          gitlint --fail-without-commits --debug --contrib ${{inputs.contrib}} --ignore ${{inputs.ignore}} --commits ${{github.event.pull_request.base.sha}}...${{github.event.after}}
