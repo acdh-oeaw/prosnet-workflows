@@ -6,19 +6,22 @@ Deploy an APIS instance on the default cluster. Use like this:
 name: deploy
 on:
   push:
+    # Run deployment only on pushes to main, not other branches
+    branches: [main]
+    # Allows you to run this workflow manually from the Actions tab or through HTTP API
+    workflow_dispatch:
 
 jobs:
   deploy:
-    uses: acdh-oeaw/prosnet-workflows/.github/workflows/deploy-apis-instance.yml@dev
+    uses: acdh-oeaw/prosnet-workflows/.github/workflows/deploy-apis-instance.yml@0.0.1
     secrets: inherit
 ```
 It uses the [APIS Base Container](https://github.com/acdh-oeaw/apis-base-container/) for deployment.
 
-The repository running this workflow has to contain two things:
+The repository running this workflow has to contain one file:
 * a `pyproject.toml` file 
-* a `wsgi.py` file
 
-The `pyproject.toml` file should contain the definition of your APIS setup, i.e. something like this:
+The `pyproject.toml` file should contain the definition of your APIS setup, i.e. something like this (this is **only an example**!):
 ```toml
 [tool.poetry]
 name = "some-apis-instance"
@@ -45,14 +48,6 @@ also be part of the repository - but it could also be located somewhere else.
 Its a Python module like any other, with the limitation that is has to called
 `apis_ontology` (thats a bug in `apis_core` that waits to be fixed...)
 
-The `wsgi.py` is used by gunicorn to start the APIS instance. A simple one could look like this (which is basically the default from Djangos `startproject`):
-
-```python
-import os
-from django.core.wsgi import get_wsgi_application
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'apis_ontology.settings.server_settings')
-application = get_wsgi_application()
-```
 
 For the workflow to work, you have to set some environment variables and secrets in the repository (*Settings* -> *Secrets and variables* -> *Actions*):
 
@@ -61,5 +56,4 @@ Variables needed for deployment to work:
 * `KUBE_NAMESPACE`
 * `PUBLIC_URL`
 * `SERVICE_ID`
-
-You probably also want to set at least `DJANGO_SETTINGS_MODULE`
+* `DJANGO_SETTINGS_MODULE`
