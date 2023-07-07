@@ -8,6 +8,11 @@ on:
       C2_KUBE_CONFIG:
         description: 'The kubctl config file with credentials to access the your kubernetes'
         required: true
+    inputs:
+      apis-base-container-ref:
+        required: false
+        type: string
+        default: 0.0.1
 
 jobs:
   setup_workflow_env:
@@ -26,6 +31,7 @@ jobs:
         with:
           repository: acdh-oeaw/apis-base-container
           path: apis-base-container
+          ref: ${{ inputs.apis-base-container-ref }}
       - name: Checkout
         uses: actions/checkout@v3
         with:
