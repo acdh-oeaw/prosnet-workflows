@@ -13,7 +13,7 @@ on:
 
 jobs:
   deploy:
-    uses: acdh-oeaw/prosnet-workflows/.github/workflows/deploy-apis-instance.yml@v0.1.1
+    uses: acdh-oeaw/prosnet-workflows/.github/workflows/deploy-apis-instance.yml@v0.1.2
     secrets: inherit
 ```
 It uses the [APIS Base Container](https://github.com/acdh-oeaw/apis-base-container/) for deployment.
