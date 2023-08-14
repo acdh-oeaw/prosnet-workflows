@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.0.1...v0.1.0) (2023-08-14)
+
+
+### Features
+
+* **deploy-apis-instance:** allow base-container ref override ([5fb4667](https://github.com/acdh-oeaw/prosnet-workflows/commit/5fb4667d4587d490063350fd01f080ce03cfda13))
+
 ## 0.0.1 (2023-07-06)
 
 
