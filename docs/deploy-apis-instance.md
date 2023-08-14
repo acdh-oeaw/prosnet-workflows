@@ -52,8 +52,8 @@ Its a Python module like any other, with the limitation that is has to called
 For the workflow to work, you have to set some environment variables and secrets in the repository (*Settings* -> *Secrets and variables* -> *Actions*):
 
 Variables needed for deployment to work:
-* `APP_NAME`
-* `KUBE_NAMESPACE`
-* `PUBLIC_URL`
-* `SERVICE_ID`
-* `DJANGO_SETTINGS_MODULE`
+* `APP_NAME`: The name of your instance - you can set it to whatever, the suggestion is to use the application name without the `apis-instance-` prefix
+* `KUBE_NAMESPACE`: The namespace your application should be deployed to - has to exist in rancher
+* `PUBLIC_URL`: The endpoint your service should listen to
+* `SERVICE_ID`: This is the services issue ID in the internal redmine - you have to create that service issue beforehand
+* `DJANGO_SETTINGS_MODULE`: This points to your Django settings. There is no default. See [the upstream documentation for details](https://docs.djangoproject.com/en/4.2/topics/settings/#envvar-DJANGO_SETTINGS_MODULE)
