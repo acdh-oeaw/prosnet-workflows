@@ -56,4 +56,4 @@ Variables needed for deployment to work:
 * `KUBE_NAMESPACE`: The namespace your application should be deployed to - has to exist in rancher
 * `PUBLIC_URL`: The endpoint your service should listen to
 * `SERVICE_ID`: This is the services issue ID in the internal redmine - you have to create that service issue beforehand
-* `DJANGO_SETTINGS_MODULE`: This points to your Django settings. There is no default. See [the upstream documentation for details](https://docs.djangoproject.com/en/4.2/topics/settings/#envvar-DJANGO_SETTINGS_MODULE)
+* `K8S_SECRET_DJANGO_SETTINGS_MODULE`: This points to your Django settings. There is no default. See [the upstream documentation for details](https://docs.djangoproject.com/en/4.2/topics/settings/#envvar-DJANGO_SETTINGS_MODULE)
