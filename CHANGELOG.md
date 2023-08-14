@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.1.1...v0.1.2) (2023-08-14)
+
+
+### Bug Fixes
+
+* **deploy-apis-instance:** correct variable name in documentation ([47fb827](https://github.com/acdh-oeaw/prosnet-workflows/commit/47fb827f0cb1c41e3494350a1862d7f6fc8b0267))
+
 ## [0.1.1](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.1.0...v0.1.1) (2023-08-14)
 
 
