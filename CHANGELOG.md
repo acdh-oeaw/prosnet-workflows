@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.1.0...v0.1.1) (2023-08-14)
+
+
+### Bug Fixes
+
+* **deploy-apis-instance:** fix typo in base-container version ([12651fc](https://github.com/acdh-oeaw/prosnet-workflows/commit/12651fcfe1a7c937f9309e2ba247c7411796433a))
+
 ## [0.1.0](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.0.1...v0.1.0) (2023-08-14)
 
 
