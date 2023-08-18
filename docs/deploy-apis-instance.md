@@ -1,6 +1,10 @@
 # `deploy-apis-instance.yml`
 
-Deploy an APIS instance on the default cluster. Use like this:
+Deploy an APIS instance on the default cluster. There is a
+[cookiecutter-template](https://github.com/acdh-oeaw/apis-instance-cookiecutter)
+to setup an APIS instance repository that uses this workflow.
+
+Use like this:
 
 ```yml
 name: deploy
@@ -13,7 +17,7 @@ on:
 
 jobs:
   deploy:
-    uses: acdh-oeaw/prosnet-workflows/.github/workflows/deploy-apis-instance.yml@v0.1.2
+    uses: acdh-oeaw/prosnet-workflows/.github/workflows/deploy-apis-instance.yml@v0.2.0
     secrets: inherit
 ```
 It uses the [APIS Base Container](https://github.com/acdh-oeaw/apis-base-container/) for deployment.
@@ -32,10 +36,8 @@ license = "MIT"
 packages = [{include = "apis_ontology"}]
 
 [tool.poetry.dependencies]
-python = ">=3.11,<3.12"
-django = ">=4.1,<4.2"
+python = "^3.11"
 apis-core = { git = "https://github.com/acdh-oeaw/apis-core-rdf.git", branch = "main"  }
-webpage = { git = "https://github.com/acdh-oeaw/apis-webpage.git", branch = "main" }
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
