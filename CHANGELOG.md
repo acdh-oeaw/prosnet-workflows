@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.2.0...v0.2.1) (2023-08-21)
+
+
+### Bug Fixes
+
+* **deploy-apis-instance:** bump minor version of container ([a7caa6c](https://github.com/acdh-oeaw/prosnet-workflows/commit/a7caa6c30c77fc6fd3714cb7342123c7ddca3800))
+
 ## [0.2.0](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.1.2...v0.2.0) (2023-08-17)
 
 
