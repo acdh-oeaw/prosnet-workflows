@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.2.1...v0.3.0) (2023-08-28)
+
+
+### Features
+
+* **deploy-apis-instance:** add datetime to docker tag ([95a8797](https://github.com/acdh-oeaw/prosnet-workflows/commit/95a87975f0414a6701ebab8cf511092b14f94a15))
+* **deploy-apis-instance:** implement nodeploy ([d92b6b0](https://github.com/acdh-oeaw/prosnet-workflows/commit/d92b6b0795bf9e28e670ea39a82dae895e69944b))
+
 ## [0.2.1](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.2.0...v0.2.1) (2023-08-21)
 
 
