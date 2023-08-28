@@ -70,6 +70,7 @@ jobs:
 
 
   deploy:
+    if: ${{ !startsWith(github.ref_name, 'nodeploy/') }}
     needs: [setup_workflow_env, build_and_push_to_registry]
     uses: acdh-oeaw/gl-autodevops-minimal-port/.github/workflows/deploy-cluster-2.yml@main
     secrets: inherit
