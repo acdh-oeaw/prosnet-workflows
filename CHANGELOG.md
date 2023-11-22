@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.3.1...v0.3.2) (2023-11-22)
+
+
+### Bug Fixes
+
+* bump version of base-container from v0.2.0 to v0.2.1 ([f233c32](https://github.com/acdh-oeaw/prosnet-workflows/commit/f233c3293c2d2deb69868d869367d9c3e1b12280))
+
 ## [0.3.1](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.3.0...v0.3.1) (2023-09-27)
 
 
