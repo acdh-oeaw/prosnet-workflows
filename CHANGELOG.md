@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.3.2...v0.3.3) (2023-11-23)
+
+
+### Bug Fixes
+
+* refactor gitlint workflow ([a80ea45](https://github.com/acdh-oeaw/prosnet-workflows/commit/a80ea45434a64391e49f90c563472c7a758fc46e))
+
 ## [0.3.2](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.3.1...v0.3.2) (2023-11-22)
 
 
