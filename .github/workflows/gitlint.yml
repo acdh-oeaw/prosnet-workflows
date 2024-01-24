@@ -23,7 +23,7 @@ on:
       arguments:
         required: false
         type: string
-        default: ""
+        default: "-c body-max-line-length.line-length=120"
       comment:
         required: false
         type: boolean
