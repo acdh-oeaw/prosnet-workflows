@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.4](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.3.3...v0.3.4) (2024-01-24)
+
+
+### Bug Fixes
+
+* allow longer lines in commit message body ([a06c65d](https://github.com/acdh-oeaw/prosnet-workflows/commit/a06c65d676ec0ffe3bd096c3150320aad09dc4ff))
+
 ## [0.3.3](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.3.2...v0.3.3) (2023-11-23)
 
 
