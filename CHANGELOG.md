@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.5](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.3.4...v0.3.5) (2024-01-26)
+
+
+### Bug Fixes
+
+* bump default version of apis-base-container ([059aec8](https://github.com/acdh-oeaw/prosnet-workflows/commit/059aec8aae260af45cb5244eb4dc3e50b3b60c3a))
+
 ## [0.3.4](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.3.3...v0.3.4) (2024-01-24)
 
 
