@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2024 K Kollmann
+# SPDX-License-Identifier: MIT
+
+name: Add issues and/or PRs to a GitHub project
+
+on:
+  workflow_call:
+    secrets:
+      ADD_TO_PROJECT_TOKEN:
+        description: "Fine-grained personal access token granting access
+         to organization projects and repository issues"
+        required: true
+    inputs:
+      PROJECT_NUM:
+        description: "Number of target project within the org"
+        required: true
+        type: number
+      project-org:
+        description: "Name of GitHub organization account to which the project
+        belongs"
+        default: "acdh-oeaw"
+        required: false
+        type: string
+      labeled:
+        description: "Comma-separated list of labels to filter tickets by"
+        default: ""
+        required: false
+        type: string
+      label-operator:
+        description: "AND, OR or NOT operator to use with labels"
+        default: ""
+        required: false
+        type: string
+
+jobs:
+  add-to-project:
+    name: Add to project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v0.5.0
+        with:
+          # target project needn't be in same organization as repo running action
+          project-url: "https://github.com/orgs/${{ inputs.project-org }}/projects/${{ inputs.PROJECT_NUM }}"
+          github-token: ${{ secrets.ADD_TO_PROJECT_TOKEN }}
+          labeled: ${{ inputs.labeled }}
+          label-operator: ${{ inputs.label-operator }}
