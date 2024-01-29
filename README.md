@@ -10,6 +10,7 @@ various repositories of the Prosopograhy and Networks group at the
 
 ## Workflows
 
+* [add-to-project](docs/add-to-project.md)
 * [deploy-apis-instance.yml](docs/deploy-apis-instance.md)
 
 * poetry-black.yml
