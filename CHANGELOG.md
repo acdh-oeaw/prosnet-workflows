@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.0](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.3.5...v0.4.0) (2024-01-31)
+
+
+### Features
+
+* create reusable add-to-project workflow ([ef25c0c](https://github.com/acdh-oeaw/prosnet-workflows/commit/ef25c0cd9eccf344e4f1206f60f1a2ed96a833aa))
+
+
+### Bug Fixes
+
+* workflow name ([c769bc7](https://github.com/acdh-oeaw/prosnet-workflows/commit/c769bc733d4339b1ae7c9fc9c64d9d26a296b4d7))
+
 ## [0.3.5](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.3.4...v0.3.5) (2024-01-26)
 
 
