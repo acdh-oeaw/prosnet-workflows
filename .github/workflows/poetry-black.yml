@@ -1,6 +1,6 @@
 #SPDX-FileCopyrightText: 2023 Birger Schacht
 #SPDX-License-Identifier: MIT
-name: Run black linter via poetry
+name: Run Black code formatter via Poetry
 
 on:
   workflow_call:
