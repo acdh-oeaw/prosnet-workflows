@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.4.0...v0.4.1) (2024-02-12)
+
+
+### Bug Fixes
+
+* update apis-base-container default ref to 0.4.0 ([632887a](https://github.com/acdh-oeaw/prosnet-workflows/commit/632887a7432c9d07da0378c80e10b4a256ccad43))
+
 ## [0.4.0](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.3.5...v0.4.0) (2024-01-31)
 
 
