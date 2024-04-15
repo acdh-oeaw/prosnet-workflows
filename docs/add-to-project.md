@@ -25,15 +25,14 @@ jobs:
     secrets:
       ADD_TO_PROJECT_TOKEN: ${{ secrets.ADD_TO_PROJECT_TOKEN }}
     with:
-      PROJECT_NUM: ${{ vars.GH_PROJECT_NUM }}
+      PROJECT_NUM: 0
 ```
 
 ### Required settings
 
 * `RELEASE_VERSION` needs to be set to a valid prosnet-workflows [release tag](https://github.com/acdh-oeaw/prosnet-workflows/releases), branch name or SHA.
 * `ADD_TO_PROJECT_TOKEN` refers to a personal access token which you need to store in your repository's **actions secrets**. In the example, the secret it gets set to is assumed to have the same name (`secrets.ADD_TO_PROJECT_TOKEN`).
-* `PROJECT_NUM` needs to be set to the _number_ of the GitHub Project within the organisation (the last segment in the URL https://github.com/orgs/YOUR-ORG/projects/X/; not the same as the project ID). It's an integer, and in the example was saved in an _actions variable_ named `GH_PROJECT_NUM`.
-
+* `PROJECT_NUM` needs to be set to the _number_ of the GitHub Project within the organisation, i.e. the last segment in the URL https://github.com/orgs/YOUR-ORG/projects/X/ (not the same as the project _ID_). Replace `0` in the example with a valid integer.
 
 
 ### Optional settings
@@ -75,8 +74,6 @@ A fine-grained token needs _write_ permissions for _organization projects_ as we
 ### Actions variables and secrets
 
 The personal access token ought to be added to the executing repository's **actions secrets** for safekeeping. Point `ADD_TO_PROJECT_TOKEN` to it.
-
-The project number referred to by `PROJECT_NUM` is a less sensible piece of data; it can go into the repository's **actions variables** (or perhaps even directly into the workflow file).
 
 
 ## Background information
