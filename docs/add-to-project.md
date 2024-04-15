@@ -2,13 +2,13 @@
 
 [add-to-project.yml](../.github/workflows/add-to-project.yml) is a reusable GitHub workflow which adds a repository's issues and/or PRs to a GitHub Project.
 
-It only works for [v2 projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects), not [classic projects](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards).
+Note that the workflow can only be used with new GitHub [Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects), not [projects (classic)](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards).
 
 ## How to use
 
-To reuse the workflow, create a new workflow file in each repository whose tickets should get auto-added to your project.
+Create a new workflow file in each repository whose tickets should get auto-added to your project.
 
-Example config for adding every newly opened issue:
+The following example config adds every newly opened issue:
 
 
 ```yml
@@ -31,55 +31,44 @@ jobs:
 ### Required settings
 
 * `RELEASE_VERSION` needs to be set to a valid prosnet-workflows [release tag](https://github.com/acdh-oeaw/prosnet-workflows/releases), branch name or SHA.
-* `ADD_TO_PROJECT_TOKEN` refers to a personal access token which you need to store in your repository's **actions secrets**. In the example, the secret it gets set to is assumed to have the same name (`secrets.ADD_TO_PROJECT_TOKEN`).
+* `ADD_TO_PROJECT_TOKEN` points to the personal access token which grants access to the relevant project (see below). The example assumes the token to be stored in the form of an identically named actions secret (hence `secrets.ADD_TO_PROJECT_TOKEN`).
 * `PROJECT_NUM` needs to be set to the _number_ of the GitHub Project within the organisation, i.e. the last segment in the URL https://github.com/orgs/YOUR-ORG/projects/X/ (not the same as the project _ID_). Replace `0` in the example with a valid integer.
 
 
 ### Optional settings
 
-Optional additional variables include:
+The following optional variables can be added to the `with` section of the config:
+
 * `project-org`: The name of the organisation account which owns the project. Only needed for projects which belong to a different organisation than [acdh-oeaw](https://github.com/orgs/acdh-oeaw/).
-* `labeled`: A comma-separated list of labels to limit the tickets to which the workflow should be applied.
+* `labeled`: A comma-separated list of labels to limit which tickets should be considered.
 * `label-operator`: The operator to use with `labeled`. Can be one of: `AND`, `OR`, `NOT` (defaults to `OR`).
 
-To include any of the optional settings, add them after the project number under the `with` keyword at the end of your config:
 
-```yml
-...
-    with:
-      PROJECT_NUM: ...
-      labeled: "bug, feature, feature-request"
-```
-
-For more details and examples on how to customise the action, see 
-[actions/add-to-project](https://github.com/actions/add-to-project).
+For more information on how to customise the action further, see [actions/add-to-project](https://github.com/actions/add-to-project).
 
 
 **Other configurations**
 
-The `name` of your workflow can be whatever makes sense to you. It's how the workflow will show up in the "Actions" tab. 
+The `name` of your workflow can be whatever makes sense to you. It's how the workflow will show up in the "Actions" tab.
 
 
 ## Credentials
 
-### GitHub Personal Access Token
+The workflow requires a personal access token to be set to work.
 
-You need a personal access token to make use of this workflow.
+Create a new [fine-grained access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#fine-grained-personal-access-tokens) for the GitHub organization under which the GitHub Project exists with:
+* **write** permissions for _organization projects_,
+* **read** permissions for _issues_,
 
-It needs to be created by/for the GitHub organisation account to which the project belongs and should be a **_fine-grained_ access token** rather than a classic token for more restrictive permission settings.
+and limit its access to only relevant repositories via the "Only select repositories" option.
 
-A fine-grained token needs _write_ permissions for _organization projects_ as well as _read_ permissions for _issues_. Limit read access to only relevant repositories by choosing the "Only select repositories" option during token creation.
-
-
-### Actions variables and secrets
-
-The personal access token ought to be added to the executing repository's **actions secrets** for safekeeping. Point `ADD_TO_PROJECT_TOKEN` to it.
+Next, add the token as a new **actions secret** to every repository in which the workflow will run. Make sure the secret's name matches whatever `ADD_TO_PROJECT_TOKEN` in the workflow config points to. (Note: unlike variables, secrets cannot retroactively be modified in any way.)
 
 
-## Background information
+## Relevancy of this workflow vs. built-in workflow
 
-The new GitHub Projects include a neat built-in ["auto-add" workflow](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/adding-items-automatically) which can be used to automatically add repository items to a project.
+GitHub Projects come with a neat ["auto-add" workflow](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/adding-items-automatically) built in, along with several other workflows.
 
-For free GitHub accounts, however, this feature is limited to only one repository. This means that for projects which track tickets across multiple repositories, all remaining issues/PRs need to be added manually, which can easily lead to tickets _not_ getting added by accident.
+However, on free GitHub accounts, this feature is limited to a single repository per project. Meaning for projects which track issues/PRs across multiple repositories, all remaining tickets will have to be added manually.
 
-The original **actions/add-to-project** workflow this reusable workflow builds on fixes this problem.
+The **actions/add-to-project** workflow which this reusable workflow builds on fixes this problem.
