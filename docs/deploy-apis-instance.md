@@ -59,6 +59,7 @@ Variables needed for deployment to work:
 * `PUBLIC_URL`: The endpoint your service should listen to
 * `SERVICE_ID`: This is the services issue ID in the internal redmine - you have to create that service issue beforehand
 * `K8S_SECRET_DJANGO_SETTINGS_MODULE`: This points to your Django settings. There is no default. See [the upstream documentation for details](https://docs.djangoproject.com/en/4.2/topics/settings/#envvar-DJANGO_SETTINGS_MODULE)
+* `K8S_SECRET_SECRET_KEY`: Deployment will be all right without this variable but user session problems similar to [issue 535](https://github.com/acdh-oeaw/apis-core-rdf/issues/535) might occur without this. Its value should be set to a strong string such as the output of `django.core.management.utils.get_random_secret_key`
 
 Any other variables you want to pass to your Django application have to be prefixed with `K8S_SECRET_` - this is a peculiarity of our deployment setup.
 
