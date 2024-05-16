@@ -17,5 +17,4 @@ various repositories of the Prosopograhy and Networks group at the
 * poetry-deptry.yml
 
 * poetry-djlint.yml
-
-* poetry-ruff.yml
+* [poetry-ruff](docs/poetry-ruff.md)
