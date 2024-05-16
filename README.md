@@ -12,6 +12,7 @@ various repositories of the Prosopograhy and Networks group at the
 
 * [add-to-project](docs/add-to-project.md)
 * [deploy-apis-instance.yml](docs/deploy-apis-instance.md)
+* [gitlint.yml](docs/gitlint.md)
 * [poetry-black](docs/poetry-black.md)
 
 * poetry-deptry.yml
