@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.4.2...v0.4.3) (2024-06-13)
+
+
+### Bug Fixes
+
+* move SECRET_KEY from Variables section  ([6c3f861](https://github.com/acdh-oeaw/prosnet-workflows/commit/6c3f8614f98626a84be7152326bb01e6a60e44bb))
+
 ## [0.4.2](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.4.1...v0.4.2) (2024-04-15)
 
 
