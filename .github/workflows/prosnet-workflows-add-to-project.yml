@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2024 K Kollmann
+# SPDX-License-Identifier: MIT
+
+name: Add repository issues to Prosnet project
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add-to-project:
+    uses: ./.github/workflows/add-to-project.yml
+    secrets:
+      ADD_TO_PROJECT_TOKEN: ${{ secrets.ADD_TO_PROJECT_TOKEN }}
+    with:
+      PROJECT_NUM: 5
