@@ -33,7 +33,3 @@ The following optional variables can be added to the `with` section of the confi
 
 * `python-version`: The Python version for which to set up Poetry, which is used to run Black. For APIS projects, the prosnet-workflows default should work best.
 * `options`: Arguments with which to run `poetry run black`, see Black [command line options](https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#command-line-options). If you set this variable, it will override the prosnet-workflows defaults.
-
-**Other configurations**
-
-The `name` of your workflow can be whatever makes sense to you. It's how the workflow will show up in the "Actions" tab.

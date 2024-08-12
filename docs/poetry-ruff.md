@@ -55,9 +55,6 @@ The following optional variables can be added to the `with` section of the confi
 * `options`: Arguments with which to run `poetry run ruff`. Default is `check`, which runs Ruff as linter. Set this explicitly to override the default, e.g. use `format` to run Ruff as code formatter. See the Ruff [linter](https://docs.astral.sh/ruff/linter/) and [formatter](https://docs.astral.sh/ruff/formatter/) docs for details on more fine-grained settings.
 * `python-version`: The Python version for which to set up Poetry, which is used to run Ruff. For APIS projects, the prosnet-workflows default should work best.
 
+### Additional notes
 
-**Other configurations**
-
-The `name` of your workflow can be whatever makes sense to you. It's how the workflow will show up in the "Actions" tab.
-
-If you use two Ruff workflows in the same repository, take care to name them differently to make it easier to differentiate workflow runs. The same applies to the `jobs` section in the config as well as the file names themselves.
+If you use two Ruff workflows in the same repository, take care to use different `name`s, job names and file names for easier differentiation between the workflows and individual workflow runs.
