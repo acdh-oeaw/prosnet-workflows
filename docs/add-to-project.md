@@ -47,11 +47,6 @@ The following optional variables can be added to the `with` section of the confi
 For more information on how to customise the action further, see [actions/add-to-project](https://github.com/actions/add-to-project).
 
 
-**Other configurations**
-
-The `name` of your workflow can be whatever makes sense to you. It's how the workflow will show up in the "Actions" tab.
-
-
 ## Credentials
 
 The workflow requires a personal access token to be set to work.
