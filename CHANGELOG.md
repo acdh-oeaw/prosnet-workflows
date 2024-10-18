@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.3](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.4.2...v0.4.3) (2024-10-18)
+
+
+### Bug Fixes
+
+* **deploy-apis-instance:** bump base image version to v0.6.0 ([2f8db87](https://github.com/acdh-oeaw/prosnet-workflows/commit/2f8db87d5356bc120a2156f0bbd92866a0ee6faf))
+* move SECRET_KEY from Variables section  ([6c3f861](https://github.com/acdh-oeaw/prosnet-workflows/commit/6c3f8614f98626a84be7152326bb01e6a60e44bb))
+
 ## [0.4.2](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.4.1...v0.4.2) (2024-04-15)
 
 
