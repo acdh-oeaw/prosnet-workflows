@@ -12,7 +12,7 @@ on:
       apis-base-container-ref:
         required: false
         type: string
-        default: v0.6.1
+        default: v0.6.2
 
 jobs:
   setup_workflow_env:
