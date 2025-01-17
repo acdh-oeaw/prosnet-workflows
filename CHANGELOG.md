@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.7](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.4.6...v0.4.7) (2025-01-17)
+
+
+### Bug Fixes
+
+* **gitlint:** don't comment failed PRs by default ([5ab57c6](https://github.com/acdh-oeaw/prosnet-workflows/commit/5ab57c62a9854d0a9ccfb3c0a083f4b6ed869f19))
+
 ## [0.4.6](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.4.5...v0.4.6) (2024-11-13)
 
 
