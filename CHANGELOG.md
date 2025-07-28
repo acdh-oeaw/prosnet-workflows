@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.4.7...v0.5.0) (2025-07-28)
+
+
+### Features
+
+* **deploy-apis-instance:** bump base image version to v0.7.0 ([3c57d61](https://github.com/acdh-oeaw/prosnet-workflows/commit/3c57d614455d997eba98ae70ec707b419dedd0a3))
+
 ## [0.4.7](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.4.6...v0.4.7) (2025-01-17)
 
 
