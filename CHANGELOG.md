@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.7.1...v0.8.0) (2026-06-09)
+
+
+### Miscellaneous Chores
+
+* release 0.8.0 ([c350b44](https://github.com/acdh-oeaw/prosnet-workflows/commit/c350b44b21d1f02b5c1b506ce40a42d7eb381830))
+
 ## [0.7.1](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.7.0...v0.7.1) (2026-05-20)
 
 
