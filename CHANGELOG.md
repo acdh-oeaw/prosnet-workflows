@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.2](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.8.1...v0.8.2) (2026-06-10)
+
+
+### Bug Fixes
+
+* **deploy-apis-instance:** bump base container image to 0.11.2 ([ee03086](https://github.com/acdh-oeaw/prosnet-workflows/commit/ee0308698f296e38a9c51f8d2b0e2938fd48c369))
+
 ## [0.8.1](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.8.0...v0.8.1) (2026-06-10)
 
 
