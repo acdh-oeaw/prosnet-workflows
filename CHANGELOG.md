@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.1](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.8.0...v0.8.1) (2026-06-10)
+
+
+### Bug Fixes
+
+* **deploy-apis-instance:** drop secrets pass through ([9d963d4](https://github.com/acdh-oeaw/prosnet-workflows/commit/9d963d499115e82ea7a966593bfccca71a355b4e)), closes [#105](https://github.com/acdh-oeaw/prosnet-workflows/issues/105)
+
 ## [0.8.0](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.7.1...v0.8.0) (2026-06-09)
 
 
