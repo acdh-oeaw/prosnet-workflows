@@ -4,10 +4,6 @@ name: Deploy to ACDH-CH infra
 
 on:
   workflow_call:
-    secrets:
-      C2_KUBE_CONFIG:
-        description: 'The kubctl config file with credentials to access the your kubernetes'
-        required: true
     inputs:
       apis-base-container-ref:
         required: false
