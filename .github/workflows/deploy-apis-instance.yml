@@ -77,3 +77,4 @@ jobs:
       PUBLIC_URL: ${{ vars.PUBLIC_URL }}
       APP_ROOT: "/"
       KUBE_NAMESPACE: ${{ vars.KUBE_NAMESPACE }}
+      do_not_generate_additional_host_names: "true"
