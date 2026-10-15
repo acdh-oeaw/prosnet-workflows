@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.9.0](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.8.2...v0.9.0) (2026-10-15)
+
+
+### Features
+
+* **deploy-apis-instance:** bump base image version to v0.12.0 ([74e3cb4](https://github.com/acdh-oeaw/prosnet-workflows/commit/74e3cb409b1d51ca78c12680f53e131a6c1a497c))
+
+
+### Bug Fixes
+
+* **deploy-apis-instance:** configure to not create additional hostnames ([5b2a483](https://github.com/acdh-oeaw/prosnet-workflows/commit/5b2a4832c876c79ba155180006836645eb63c670))
+
 ## [0.8.2](https://github.com/acdh-oeaw/prosnet-workflows/compare/v0.8.1...v0.8.2) (2026-06-10)
 
 
